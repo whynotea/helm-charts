@@ -8,7 +8,7 @@ This repository hosts Whynotea's [Helm](https://helm.sh) charts. Chart documenta
 ## Add Helm repository
 
 ```bash
-helm repo add whynotea https://docs.whynotea.com/helm-charts
+helm repo add whynotea https://whynotea.github.io/helm-charts
 helm repo update
 ```
 
