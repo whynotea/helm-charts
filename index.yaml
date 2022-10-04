@@ -1,0 +1,16 @@
+apiVersion: v1
+entries:
+  basic:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-10-04T13:48:32.667778357Z"
+    description: A basic Helm chart for Kubernetes for testing helm deployment and
+      network routing
+    digest: 88561d81cac9560c774d9df6cfbdcde6f03bc9ddccf1f199f6d22993085cb9e0
+    home: https://github.com/whynotea/helm-charts/charts/basic
+    name: basic
+    type: application
+    urls:
+    - https://github.com/whynotea/helm-charts/releases/download/basic-0.1.0/basic-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-10-04T13:48:32.667792558Z"
