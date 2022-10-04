@@ -1,0 +1,29 @@
+{{- if .Values.istioGateway.enabled -}}
+{{- $fullName := include "basic.fullname" . -}}
+{{- $svcPort := .Values.service.port -}}
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ $fullName }}
+  labels:
+    {{- include "basic.labels" . | nindent 4 }}
+  {{- with .Values.ingress.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  hosts:
+   {{- range .Values.istioGateway.hosts }}
+   - {{ . | quote }}
+   {{- end }}
+  gateways:
+   {{- range .Values.istioGateway.gateways }}
+   - {{ . | quote }}
+   {{- end }}
+  http:
+  - route:
+    - destination:
+        host: {{ $fullName }}
+        port:
+          number: {{ $svcPort }}
+{{- end }}
