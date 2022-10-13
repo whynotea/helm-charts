@@ -2,6 +2,6 @@ apiVersion: v2
 appVersion: "1.16.0"
 description: A basic Helm chart for Kubernetes for testing helm deployment and network routing
 name: basic
-version: 0.1.0
+version: 0.1.1
 type: application
 home: https://github.com/whynotea/helm-charts/charts/basic
