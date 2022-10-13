@@ -7,5 +7,5 @@ metadata:
 spec:
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: {{ .Values.service.nodeport }}
+      targetPort: {{ .Values.service.nodePort }}
       protocol: TCP

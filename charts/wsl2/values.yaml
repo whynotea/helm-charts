@@ -40,6 +40,7 @@ service:
   type: NodePort
   port: 80
   nodePort: 30000
+  nodeIp: 192.168.0.67
 
 ingress:
   enabled: false

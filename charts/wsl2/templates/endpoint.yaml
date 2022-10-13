@@ -4,6 +4,6 @@ metadata:
   name: {{ include "wsl2.fullname" . }}-endpoint
 subsets:
   - addresses:
-      - ip: {{ .Values.service.nodeip }}
+      - ip: {{ .Values.service.nodeIp }}
     ports:
-      - port: {{ .Values.service.nodeport }}
+      - port: {{ .Values.service.nodePort }}
