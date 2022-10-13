@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "wsl2.fullname" . }}-endpoint
+  labels:
+    {{- include "wsl2.labels" . | nindent 4 }}
+spec:
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.nodeport }}
+      protocol: TCP

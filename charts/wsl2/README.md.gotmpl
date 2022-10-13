@@ -1,0 +1,38 @@
+{{ template "chart.header" . }}
+{{ template "chart.deprecationWarning" . }}
+
+{{ template "chart.versionBadge" . }}{{ template "chart.typeBadge" . }}{{ template "chart.appVersionBadge" . }}
+
+{{ template "chart.description" . }}
+
+{{ template "chart.homepageLine" . }}
+
+## Description
+This chart attempts to provide a generic helm chart for installing applications onto a wsl2 node.
+Wsl2 only supports NAT ips, see issue [4150](https://github.com/microsoft/WSL/issues/4150).
+The [Kubernetes network model](https://kubernetes.io/docs/concepts/services-networking/) requires that all nodes can be communicated to without NAT.
+You can add a wsl2 node to a kubernetes network but you won't be able to have containers cross communicate via a network plugin like calico.
+The use-case for a wsl2 node is to run containers which can access the gpu which can't be done via virtual machines running on windows.
+A wsl2 container running a Jupyter notebook can be accessed from this chart for instance, by using an istio gateway to route to a service which redirects to the nodeport.
+You'll need to portforward the nodeport for it to be accessible via the windows host ip which the endpoint directs to.
+
+## Installation
+
+### Add Helm repository
+
+```shell
+helm repo add whynotea https://whynotea.github.io/helm-charts
+helm repo update
+```
+
+## Install WSL2 chart
+
+```bash
+helm install whynotea/wsl2
+```
+
+## Configuration
+
+The following table lists the configurable parameters of the chart and the default values.
+
+{{ template "chart.valuesSection" . }}

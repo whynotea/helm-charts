@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: {{ include "wsl2.fullname" . }}-endpoint
+subsets:
+  - addresses:
+      - ip: {{ .Values.service.nodeip }}
+    ports:
+      - port: {{ .Values.service.nodeport }}

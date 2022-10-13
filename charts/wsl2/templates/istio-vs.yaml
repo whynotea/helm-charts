@@ -1,0 +1,29 @@
+{{- if .Values.istioGateway.enabled -}}
+{{- $fullName := include "wsl2.fullname" . -}}
+{{- $svcPort := .Values.service.port -}}
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ $fullName }}
+  labels:
+    {{- include "wsl2.labels" . | nindent 4 }}
+  {{- with .Values.ingress.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  hosts:
+   {{- range .Values.istioGateway.hosts }}
+   - {{ . | quote }}
+   {{- end }}
+  gateways:
+   {{- range .Values.istioGateway.gateways }}
+   - {{ . | quote }}
+   {{- end }}
+  http:
+  - route:
+    - destination:
+        host: {{ $fullName }}-endpoint
+        port:
+          number: {{ $svcPort }}
+{{- end }}
