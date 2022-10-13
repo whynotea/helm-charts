@@ -27,6 +27,18 @@ entries:
     version: 0.1.0
   wsl2:
   - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-10-13T09:46:11.238902503Z"
+    description: A Helm chart for a wsl2 Kubernetes application which isn't accessible
+      via calico
+    digest: e82bf242020966005495f041179a1903929ab056fc02b628937d9f91210c36fb
+    home: https://github.com/whynotea/helm-charts/charts/wsl2
+    name: wsl2
+    type: application
+    urls:
+    - https://github.com/whynotea/helm-charts/releases/download/wsl2-0.1.1/wsl2-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     appVersion: 0.1.0
     created: "2022-10-13T09:06:07.431305717Z"
     description: A Helm chart for a wsl2 Kubernetes application which isn't accessible
@@ -38,4 +50,4 @@ entries:
     urls:
     - https://github.com/whynotea/helm-charts/releases/download/wsl2-0.1.0/wsl2-0.1.0.tgz
     version: 0.1.0
-generated: "2022-10-13T09:06:07.431314817Z"
+generated: "2022-10-13T09:46:11.238911503Z"
