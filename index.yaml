@@ -3,6 +3,18 @@ entries:
   basic:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-10-13T09:06:07.142735547Z"
+    description: A basic Helm chart for Kubernetes for testing helm deployment and
+      network routing
+    digest: 93e98a3701d38094138d26cbfe1816a89d0016b90dbbdab42af0a9d47cc7004a
+    home: https://github.com/whynotea/helm-charts/charts/basic
+    name: basic
+    type: application
+    urls:
+    - https://github.com/whynotea/helm-charts/releases/download/basic-0.1.1/basic-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-10-04T13:48:32.667778357Z"
     description: A basic Helm chart for Kubernetes for testing helm deployment and
       network routing
@@ -13,4 +25,17 @@ entries:
     urls:
     - https://github.com/whynotea/helm-charts/releases/download/basic-0.1.0/basic-0.1.0.tgz
     version: 0.1.0
-generated: "2022-10-04T13:48:32.667792558Z"
+  wsl2:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2022-10-13T09:06:07.431305717Z"
+    description: A Helm chart for a wsl2 Kubernetes application which isn't accessible
+      via calico
+    digest: 9982d6a02e2cfe4ab74055271f5ef7a389b906012a4a27ce96514c6f2454876b
+    home: https://github.com/whynotea/helm-charts/charts/wsl2
+    name: wsl2
+    type: application
+    urls:
+    - https://github.com/whynotea/helm-charts/releases/download/wsl2-0.1.0/wsl2-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-10-13T09:06:07.431314817Z"
