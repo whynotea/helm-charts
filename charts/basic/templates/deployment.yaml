@@ -33,9 +33,22 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- with .Values.volumeMounts }}
+          volumeMounts:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{ if .Values.container }}
+          {{ if .Values.container.command }}
+          command: {{ .Values.container.command }}
+          {{ end }}
+          {{ end }}
           ports:
             - name: http
+              {{ if .Values.service.targetport }}
+              containerPort: {{ .Values.service.targetport }}
+              {{ else }}
               containerPort: {{ .Values.service.port }}
+              {{ end }}
               protocol: TCP
           livenessProbe:
             httpGet:
@@ -57,5 +70,9 @@ spec:
       {{- end }}
       {{- with .Values.tolerations }}
       tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.volumes }}
+      volumes:
         {{- toYaml . | nindent 8 }}
       {{- end }}
